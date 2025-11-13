@@ -2,18 +2,31 @@ import { useState } from "react";
 import reactLogo from "./assets/react.svg";
 import viteLogo from "/vite.svg";
 import "./App.css";
-import Header from "./components/navigation/Header";
+import Header from "./components/navigation/Header.jsx";
+import Button from "./components/common/Buttons.jsx";
 
 function App() {
   const [count, setCount] = useState(0);
+
+  const increment = () => {
+    setCount(count + 1);
+  };
+
+  const decrement = () => {
+    setCount(count - 1);
+  };
 
   return (
     <>
       <Header />
       <main>
-        <section></section>
-        <section></section>
-        <section></section>
+        <section className='flex items-center justify-center'>
+          <Button onClick={increment}>+</Button>
+          <Button onClick={decrement}>-</Button>
+          <p>{count}</p>
+        </section>
+        <section>Hello World 2</section>
+        <section>Hello World 3</section>
       </main>
       <footer>
         <div>
